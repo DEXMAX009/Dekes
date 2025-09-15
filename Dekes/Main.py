@@ -60,6 +60,7 @@
 # result = a - b - c
 # print(result)
 
+<<<<<<< HEAD
 #Практика 2
 # Задание 1
 # a = int(input('Введите число'))
@@ -116,3 +117,86 @@
 #     print(Arifm)
 
 #Практика 2
+=======
+# a = int(input('Введите число'))
+# b = int(input('Введите число'))
+# c = int(input('Введите число'))
+
+# Week_day = int('Введите число')
+# if Week_day == 1:
+#     print('Понедельник')
+# elif Week_day == 2:
+#     print('Вторник')
+# elif Week_day == 3:
+#     print('Среда')
+# elif Week_day == 4:
+#     print('Четверг')
+# elif Week_day == 5:
+#     print('Пятница')
+# elif Week_day == 6:
+#     print('Суббота')
+# elif Week_day == 7:
+#     print('Воскресенье')
+
+
+# Mouth = int(input('Введите номер месяца'))
+# if Mouth == 1:
+#     print('Январь')
+# elif Mouth == 2:
+#     print('Февраль')
+# elif Mouth == 3:
+#     print('Март')
+# elif Mouth == 4:
+#     print('Апрель')
+# elif Mouth == 5:
+#     print('Май')
+# elif Mouth == 6:
+#     print('Июнь')
+# elif Mouth == 7:
+#     print('Июль')
+# elif Mouth == 8:
+#     print('Август')
+# elif Mouth == 9:
+#     print('Сентябрь')
+# elif Mouth == 10:
+#     print('Октябрь')
+# elif Mouth == 11:
+#     print('Ноябрь')
+# elif Mouth == 12:
+#     print('Декабрь')
+
+# a = int(input('Введите число'))
+# if a > 0:
+#     print('Number is positive')
+# if a < 0:
+#     print('Number is negative')
+# if a == 0:
+#     print('Number is equal to zero')
+
+# a = int(input('Введите число'))
+# b = int(input('Введите число'))
+#
+# if a == b:
+#     print('А всё')
+# elif a < b:
+#     print(a,b)
+# elif a > b:
+#     print(b,a)
+
+a = int(input('Введите число'))
+if 1 <= a <= 100:
+    if a % 3 == 0:
+        print('Fizz')
+    elif a % 5 == 0:
+        print('Buzz')
+    elif a % 5 == 0 and a % == 0:
+        print('Fizz Buzz')
+    else:
+        print(a)
+
+else:
+    print('Неверно')
+
+
+
+>>>>>>> c72e1007333ed2f60dde80e208dbd0ced626ff8d
