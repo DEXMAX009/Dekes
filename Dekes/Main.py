@@ -52,13 +52,6 @@
 # my_var += 200 + 300
 # print(my_var)
 
-#
-# a = int(input('Введите число'))
-# b = int(input('Введите число'))
-# c = int(input('Введите число'))
-#
-# result = a - b - c
-# print(result)
 
 # a = int(input('Введите число'))
 # b = int(input('Введите число'))
@@ -125,19 +118,49 @@
 # elif a > b:
 #     print(b,a)
 
-a = int(input('Введите число'))
-if 1 <= a <= 100:
-    if a % 3 == 0:
-        print('Fizz')
-    elif a % 5 == 0:
-        print('Buzz')
-    elif a % 5 == 0 and a % == 0:
-        print('Fizz Buzz')
-    else:
-        print(a)
+# a = int(input('Введите число'))
+# if 1 <= a <= 100:
+#     if a % 3 == 0:
+#         print('Fizz')
+#     elif a % 5 == 0:
+#         print('Buzz')
+#     elif a % 5 == 0 and a % == 0:
+#         print('Fizz Buzz')
+#     else:
+#         print(a)
+#
+# else:
+#     print('Неверно')
 
-else:
-    print('Неверно')
+#Практика 2 Задание 1
+
+# a = int(input('Введите число'))
+# b = int(input('Введите число'))
+# c = int(input('Введите число'))
+#
+# sum_numbers = a + b + c
+# pro_result = a * b * c
+# print(sum_numbers, pro_result)
+#Задание 2
+# a = int(input('Введите зарплату'))
+# b = int(input('Введите кредитв банке'))
+# c = int(input('Введите заодлженность'))
+#
+# razn_number = a-b-c
+# print(razn_number)
+
+#Задание 3
+# d1 = float(input('Введите длинну диагонали'))
+# d2 = float(input('Введите длинну диагонали'))
+#
+# area = (d1 * d2) / 2
+#
+# print('Площадь ромба:', area)
+
+#Задание 4
+#print('To be', 'or not', 'to be', sep = '\n')
+
+
 
 
 
