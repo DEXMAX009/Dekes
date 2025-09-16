@@ -160,7 +160,33 @@
 #Задание 4
 #print('To be', 'or not', 'to be', sep = '\n')
 
-
-
-
-
+#  for i in range(0, 10): #условие цикла
+#   выполнение внутреннего кода
+# for i in range(10, 0, -1):
+#     print('Hello', i)
+#while(условие)
+#while True:
+#    print('*')
+# value_user = 1
+# sum_user = 0
+# while value_user != 0: #Пока выполняется условие
+#     value_user = int(input('Введите число суммирования'))
+#     sum_user = sum_user + value_user
+# print('Сумма числа пользователя:', sum_user)
+# for i in range(0, 6):
+#     print('*' * i)
+#Пользователь вводит строку
+#необходиомо её проверить на палиндроме
+#кок, а буду я у дуба.
+user_string = input('Введите строку для проверки на Палиндром: ')
+counter_letter = len(user_string)#фунция подсчёта кол-во элементов
+value_user = True #Переменнная для проверки палиндромов
+for letter_begin in range(0, counter_letter):
+    for letter_end in range(counter_letter, 0, -1):
+        print('Проверяется буква:',user_string[letter_begin])
+        print('Проверяется буква:',user_string[letter_end])
+        if letter_end != letter_end:
+            break
+    if value_user == False:
+        print('Слово не является палиндромом')
+        break
