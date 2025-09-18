@@ -249,18 +249,54 @@
 #         print('Слово не является палиндромом')
 #         break
 
-week = int(input("Ввести номер дня недели: "))
-if week == 1:
-    print("Понедельник")
-if week == 2:
-    print("Вторник")
-if week == 3:
-    print("Среда")
-if week == 4:
-    print("Четверг")
-if week == 5:
-    print("Пятница")
-if week == 6:
-    print("Суббота")
-if week == 7:
-    print("Воскресенье")
+#Практика 2
+#задание 1
+# week = int(input("Ввести номер дня недели: "))
+# if week == 1:
+#     print("Понедельник")
+# if week == 2:
+#     print("Вторник")
+# if week == 3:
+#     print("Среда")
+# if week == 4:
+#     print("Четверг")
+# if week == 5:
+#     print("Пятница")
+# if week == 6:
+#     print("Суббота")
+# if week == 7:
+#     print("Воскресенье")
+#задание 2
+# month = int(input("Введите месяц: "))
+# if month == 1:
+#     print("Январь")
+# if month == 2:
+#     print("Февраль")
+# if month == 3:
+#     print("Март")
+# if month == 4:
+#     print("Апрель")
+# if month == 5:
+#     print("Май")
+# if month == 6:
+#     print("Июнь")
+# if month == 7:
+#     print("Июль")
+# if month == 8:
+#     print("Август")
+# if month == 9:
+#     print("Сентябрь")
+# if month == 10:
+#     print("Октябрь")
+# if month == 11:
+#     print("Ноябрь")
+# if month == 12:
+#     print("Декабрь")
+#задание 3
+# a = int(input("Введите число: "))
+# if a > 0:
+#     print("Number is positive")
+# if a < 0:
+#     print("Number is negative")
+# if a == 0:
+#     print("Number is zero")
