@@ -200,15 +200,15 @@
 # print(sum_numbers, pro_result)
 #Задание 2
 # a = int(input('Введите зарплату'))
-# b = int(input('Введите кредитв банке'))
-# c = int(input('Введите заодлженность'))
+# b = int(input('Введите кредит в банке'))
+# c = int(input('Введите задолженность'))
 #
 # razn_number = a-b-c
 # print(razn_number)
 
 #Задание 3
-# d1 = float(input('Введите длинну диагонали'))
-# d2 = float(input('Введите длинну диагонали'))
+# d1 = float(input('Введите длину диагонали'))
+# d2 = float(input('Введите длину диагонали'))
 #
 # area = (d1 * d2) / 2
 #
@@ -234,10 +234,10 @@
 # for i in range(0, 6):
 #     print('*' * i)
 #Пользователь вводит строку
-#необходиомо её проверить на палиндроме
+#необходимо её проверить на палиндроме
 #кок, а буду я у дуба.
 # user_string = input('Введите строку для проверки на Палиндром: ')
-# counter_letter = len(user_string)#фунция подсчёта кол-во элементов
+# counter_letter = len(user_string)#функция подсчёта кол-во элементов
 # value_user = True #Переменнная для проверки палиндромов
 # for letter_begin in range(0, counter_letter):
 #     for letter_end in range(counter_letter, 0, -1):
@@ -249,3 +249,18 @@
 #         print('Слово не является палиндромом')
 #         break
 
+week = int(input("Ввести номер дня недели: "))
+if week == 1:
+    print("Понедельник")
+if week == 2:
+    print("Вторник")
+if week == 3:
+    print("Среда")
+if week == 4:
+    print("Четверг")
+if week == 5:
+    print("Пятница")
+if week == 6:
+    print("Суббота")
+if week == 7:
+    print("Воскресенье")
