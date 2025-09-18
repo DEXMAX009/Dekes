@@ -64,7 +64,7 @@
 # b = int(input('Введите число'))
 # c = int(input('Введите число'))
 
-<<<<<<< HEAD
+
 # n = int(input())
 # if n % != 0:
 #     print('Делится на 7')
@@ -134,7 +134,7 @@
 # else:
 #     print('Такого трегольника не существует')
 
-=======
+
 # Week_day = int('Введите число')
 # if Week_day == 1:
 #     print('Понедельник')
@@ -196,20 +196,52 @@
 # elif a > b:
 #     print(b,a)
 
-a = int(input('Введите число'))
-if 1 <= a <= 100:
-    if a % 3 == 0:
-        print('Fizz')
-    elif a % 5 == 0:
-        print('Buzz')
-    elif a % 5 == 0 and a % == 0:
-        print('Fizz Buzz')
-    else:
-        print(a)
+# a = int(input('Введите число'))
+# if 1 <= a <= 100:
+#     if a % 3 == 0:
+#         print('Fizz')
+#     elif a % 5 == 0:
+#         print('Buzz')
+#     elif a % 5 == 0 and a % 3 == 0:
+#         print('Fizz Buzz')
+#     else:
+#         print(a)
+#
+# else:
+#     print('Неверно')
 
-else:
-    print('Неверно')
->>>>>>> c72e1007333ed2f60dde80e208dbd0ced626ff8d
+# user_string = input("Введите ариф. выражение:")
+# result = ''
+# value1 = ''
+# value2 = ''
+# letter = ''
+# letter_index = 0
+# for i in range (0,len(user_string)):
+#     if user_string[i] in '+-*/':
+#         letter = user_string[i]
+#         letter_index = i
+# #поиск первого числа
+# for i in range(0, letter_index):
+#     value1 += user_string[i]
+# #поиск второго
+# for i in range(letter_index + 1, len(user_string)):
+#     value2 += user_string[i]
+# value1 = int(value1)
+# value2 = int(value2)
+# if letter == '+':
+#     result = value1 + value2
 
+# elif letter == '-':
+#     result = value1 - value2
+#
+# elif letter == '*':
+#     result = value1 * value2
+#
+# elif letter == '/':
+#     result = value1 / value2
+# print('Вычисление равно:', result)
 
+user_input = input('Введите строку: ')
+reversed_string = user_input[: : -1]
+print('Результат:', reversed_string) 
 
