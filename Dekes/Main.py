@@ -381,34 +381,69 @@
 
 #print(123)
 
-from time import time
+# from time import time
+#
+# x = [5] * 1_000_000
+# start = time()
+# for i in range(5):
+#     x.pop(0)
+#
+# stop = time()
+# print(stop - start)
+#
+# start = time()
+# for i in range(5):
+#     x.pop()
+# stop = time()
+# print(stop - start)
+#
+# start = time()
+# for i in range(5):
+#     x.append(999)
+# #x.insert(0, 999)
+# stop = time()
+# print(stop - start)
+#
+# start = time()
+# for i in range(5):
+#     x.insert(0, 999)
+# stop = time()
+# print(stop - start)
 
-x = [5] * 1_000_000
-start = time()
-for i in range(5):
-    x.pop(0)
+# start = int(input("Введите начало диапазона: "))
+# end = int(input("Введите конец диапазона: "))
+#
+# for num in range(start, end + 1):
+#     if num % 7 == 0:
+#         print(num)
 
-stop = time()
-print(stop - start)
+# start = int(input("Введите начало диапазона: "))
+# end = int(input("Введите конец диапазона: "))
+#
+# # 1. Все числа диапазона
+# print("\n1. Все числа диапазона:")
+# for num in range(start, end + 1):
+#     print(num, end=" ")
+#
+# # 2. Все числа диапазона в убывающем порядке
+# print("\n\n2. Все числа диапазона в убывающем порядке:")
+# for num in range(end, start - 1, -1):
+#     print(num, end=" ")
+#
+# # 3. Все числа, кратные 7
+# print("\n\n3. Все числа, кратные 7:")
+# for num in range(start, end + 1):
+#     if num % 7 == 0:
+#         print(num, end=" ")
+#
+# # 4. Количество чисел, кратных 5
+# print("\n\n4. Количество чисел, кратных 5:")
+# count = 0
+# for num in range(start, end + 1):
+#     if num % 5 == 0:
+#         count += 1
+# print(count)
 
-start = time()
-for i in range(5):
-    x.pop()
-stop = time()
-print(stop - start)
-
-start = time()
-for i in range(5):
-    x.append(999)
-#x.insert(0, 999)
-stop = time()
-print(stop - start)
-
-start = time()
-for i in range(5):
-    x.insert(0, 999)
-stop = time()
-print(stop - start)
 
 
 
