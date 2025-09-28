@@ -303,67 +303,119 @@
 # срез - подстрока или подмассив извлечённый из основного можно состоять из 1-n символов или элементов
 # 1. взятие одного символа
 # 2. Срез в двумя параметрами
-print(string[0:6])
-#[a:b] - интервал символов
-#find and rfind
-#нужны для поиска подстроки в строке
-print(string.find('l')) #Вернёт индекс элемента
-#Если элемента не, то -1
-print(string.rfind('l'))
-#find - ищет с лева направо
-#rfind - щет справа на лево
-#METHOD REPLACE - замена одной стр на другую
-print(string.replace('l'))
-#METHOD COUNT - считает кол-во вхождений символа в строку
-print(string.count('l'))
-# Список (массив) - послед элементов
-#пронумер от 0, как символы в строке
-Primes = [2, 3, 5, 7, 11, 13]
-print(Primes)
-print(Primes.count(3))
-print(type(Primes))
-Rainbow = ['red' , 'orange' , 'yellow' , 'green' , 'blue' , 'purple']
-print(f'кол-во цветов радуги: {len(Rainbow)} ')
-for i in Rainbow:
-    print(i, end=' ')
-print()
-# добавление и удаление элементов списка
-my_list = []
-count_list = int(input('Введите кол-во элементов: '))
-for i in range(count_list):
-    print(f"Введите элемент {i}")
-    new_element = int(input("->:"))
-    my_list.append(new_element)#Добавление нового
-print(my_list)
-print(my_list.pop())# удаление посл элемента
-#Методы join и split
-# 1 2 3
-user_str = input()
-user_list = user_str.split()
-print(string.split('l'))
-for i in range (len(user_list)):
-    user_list[i] = int(user_list[i])#Преобр типа
+# print(string[0:6])
+# #[a:b] - интервал символов
+# #find and rfind
+# #нужны для поиска подстроки в строке
+# print(string.find('l')) #Вернёт индекс элемента
+# #Если элемента не, то -1
+# print(string.rfind('l'))
+# #find - ищет с лева направо
+# #rfind - щет справа на лево
+# #METHOD REPLACE - замена одной стр на другую
+# print(string.replace('l'))
+# #METHOD COUNT - считает кол-во вхождений символа в строку
+# print(string.count('l'))
+# # Список (массив) - послед элементов
+# #пронумер от 0, как символы в строке
+# Primes = [2, 3, 5, 7, 11, 13]
+# print(Primes)
+# print(Primes.count(3))
+# print(type(Primes))
+# Rainbow = ['red' , 'orange' , 'yellow' , 'green' , 'blue' , 'purple']
+# print(f'кол-во цветов радуги: {len(Rainbow)} ')
+# for i in Rainbow:
+#     print(i, end=' ')
+# print()
+# # добавление и удаление элементов списка
+# my_list = []
+# count_list = int(input('Введите кол-во элементов: '))
+# for i in range(count_list):
+#     print(f"Введите элемент {i}")
+#     new_element = int(input("->:"))
+#     my_list.append(new_element)#Добавление нового
+# print(my_list)
+# print(my_list.pop())# удаление посл элемента
+# #Методы join и split
+# # 1 2 3
+# user_str = input()
+# user_list = user_str.split()
+# print(string.split('l'))
+# for i in range (len(user_list)):
+#     user_list[i] = int(user_list[i])#Преобр типа
+#
+# print(''.join(Rainbow))# объединение строк
+# #генератор списков
+#
+# n = 5
+# #способ 1
+# list_gen1 = []
+# for i in range(n):
+#     list_gen1.append(i*n)
+# print(f"Первый способ {list_gen1}")
+# #способ 2
+# list_gen2 = [i*n for i in range(0, n)]
+# print(f"Второй способ {list_gen2}")
+#
+# #Практика
+# #Задание 1
+# from random import randint
+# list1 = []
+# for i in range(len(list1)):
+#     list1[i] = randint(0, 10)
+# print(f"Вывод списка {list1}")
+# from time import time
+# x = [5] * 1_000_000_000
+# start = time()
+# x.append(0, 999)
+# stop = time()
+# print(stop - start)
+# x = [100, 222, 5454, 7777]
+# print(x[3])
+# x.append(5)
+# x.append(999)
+# print(x)
+# x.insert(2, 999)
+# print(x)
+# x.pop(2)
 
-print(''.join(Rainbow))# объединение строк
-#генератор списков
+#print(123)
 
-n = 5
-#способ 1
-list_gen1 = []
-for i in range(n):
-    list_gen1.append(i*n)
-print(f"Первый способ {list_gen1}")
-#способ 2
-list_gen2 = [i*n for i in range(0, n)]
-print(f"Второй способ {list_gen2}")
+from time import time
 
-#Практика
-#Задание 1
-from random import randint
-list1 = []
-for i in range(len(list1)):
-    list1[i] = randint(0, 10)
-print(f"Вывод списка {list1}")
+x = [5] * 1_000_000
+start = time()
+for i in range(5):
+    x.pop(0)
+
+stop = time()
+print(stop - start)
+
+start = time()
+for i in range(5):
+    x.pop()
+stop = time()
+print(stop - start)
+
+start = time()
+for i in range(5):
+    x.append(999)
+#x.insert(0, 999)
+stop = time()
+print(stop - start)
+
+start = time()
+for i in range(5):
+    x.insert(0, 999)
+stop = time()
+print(stop - start)
+
+
+
+#append(5)
+#insert(0, 5)
+#pop()
+#pop(0)
 
 
 
