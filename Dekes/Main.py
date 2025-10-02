@@ -255,12 +255,7 @@
 #         break
 
 
-x = 5
-y = 0
-if x > 1 or x / y == 2:
-    print(1)
-else:
-    print(2)
+
 
 #Практика 2
 #задание 1
@@ -457,15 +452,124 @@ else:
 #         count += 1
 # print(count)
 
-
-
-
 #append(5)
 #insert(0, 5)
 #pop()
 #pop(0)
 
+# s = "gfhcv"
+# A = set(s)
+# print(A)
+# if len(A) == len(s):
+#     print("Все символы уникальны")
+# else:
+#     print("есть повторения")
+#
+# x = 5
+# y = 0
+# if x > 1 or x / y == 2:
+#     print(1)
+# else:
+#     print(2)
+
+# A = {1, 2, 3, 4, 5}
+# if 20 in A:
+#     print('Yes')
+# else:
+#     print('No')
 
 
 
+# s = input('Введите пароль')
+# A = set(s)
+# if len(A) == len(s):
+#     print("Все символы уникальны")
+# else:
+#     print("есть повторения")
 
+# cities = ['Москва', 'Владивосток', 'Казань', 'Сочи', 'Омск', 'Питер', 'Омск','Владивосток']
+# a = set(cities)
+# print(a)
+# if 'Пермь' in a:
+#     print('Пермь есть')
+# else:
+#     print('Пермь нет')
+
+# math_failers = {'Быстров', 'Исаев', 'Силизнёв', 'Черемных', 'Алиев'}
+# rus_failers = {'Войтович', 'Кириллов', 'Гущин', 'Быстров'}
+# inf_failers = {'Войтович', 'Силизнёв', 'Гущин', 'Самойлов'}
+# print(rus_failers | math_failers | inf_failers)
+#
+# print(rus_failers & inf_failers)
+#
+# print(rus_failers - math_failers - inf_failers)
+# print(math_failers - rus_failers - inf_failers)
+# print(inf_failers - math_failers - rus_failers)
+#
+# print(math_failers & rus_failers & inf_failers)
+
+
+#площадь круга
+# def calculate_circle_area(radius):
+#     area = 3.14 * radius * radius
+#     return area
+# print(calculate_circle_area(10))
+# #площадь прямоугольника
+# def get_rectangle_area(a, b):
+#     a = int(input('введите длинну: '))
+#     b = int(input('введите ширину: '))
+#     area = a * b
+#     print('площадь прямоугольника', area)
+#
+# # длинна окружности
+# def get_circle_len(radius):
+#     circle_len = 2 * 3.14 * radius
+#     return circle_len
+# 
+#
+# print('1. ассчитать площадь круга')
+# print('2. ассчитать площадь треугольника')
+# print('3. ассчитать длинна круга')
+# print('0. выход')
+# menu_choice = input('Введите пункт меню:')
+#
+# if menu_choice == "1":
+#     pass#что-то делаем
+# if menu_choice == "2":
+#     get_rectangle_area()
+# if menu_choice == "3":
+#     pass# get_circle_len()
+# if menu_choice == "0":
+#     pass# что-то делаем
+
+# import random
+# N = 10
+# list_booble = []
+# for i in range(N):
+#     list_booble.append(random.randint(-10, 10))
+# print(f"Начальный список: {list_booble}")
+#
+# for i in range (N):
+#     for j in range(N - 1 - i):
+#         if list_booble[j] > list_booble[j + 1]:
+#             list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+# print(f"финальный список: {list_booble}")
+
+import random
+N = 20
+list_booble = []
+for i in range(N):
+    list_booble.append(random.randint(-10, 10))
+print(f"Начальный список: {list_booble}")
+
+for i in range (N//2):
+    for j in range(N//2 - 1 - i):
+        if list_booble[j] < list_booble[j + 1]:
+            list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+
+for i in range (N//2):
+    for j in range(N//2, N - 1):
+        if list_booble[j] > list_booble[j + 1]:
+            list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+
+print(f"финальный список: {list_booble}")
