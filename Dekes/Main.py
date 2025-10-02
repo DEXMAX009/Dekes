@@ -53,10 +53,7 @@
 # print(my_var)
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 4f86b78a07d8715202cc51427cadeeb7b7615d4d
 #Практика 2
 # Задание 1
 # a = int(input('Введите число'))
@@ -241,11 +238,11 @@
 #необходимо её проверить на палиндроме
 #кок, а буду я у дуба.
 # user_string = input('Введите строку для проверки на Палиндром: ')
-<<<<<<< HEAD
+
 # counter_letter = len(user_string)#фунция подсчёта кол-во элементов
-=======
+
 # counter_letter = len(user_string)#функция подсчёта кол-во элементов
->>>>>>> 4f86b78a07d8715202cc51427cadeeb7b7615d4d
+
 # value_user = True #Переменнная для проверки палиндромов
 # for letter_begin in range(0, counter_letter):
 #     for letter_end in range(counter_letter, 0, -1):
@@ -257,14 +254,14 @@
 #         print('Слово не является палиндромом')
 #         break
 
-<<<<<<< HEAD
+
 x = 5
 y = 0
 if x > 1 or x / y == 2:
     print(1)
 else:
     print(2)
-=======
+
 #Практика 2
 #задание 1
 # week = int(input("Ввести номер дня недели: "))
@@ -470,5 +467,5 @@ else:
 
 
 
->>>>>>> 4f86b78a07d8715202cc51427cadeeb7b7615d4d
+
 
