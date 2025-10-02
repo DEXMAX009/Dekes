@@ -53,7 +53,7 @@
 # print(my_var)
 
 
-<<<<<<< HEAD
+
 #Практика 2
 # Задание 1
 # a = int(input('Введите число'))
@@ -110,7 +110,7 @@
 #     print(Arifm)
 
 #Практика 2
-=======
+
 # a = int(input('Введите число'))
 # b = int(input('Введите число'))
 # c = int(input('Введите число'))
@@ -215,7 +215,7 @@
 #
 # print('Площадь ромба:', area)
 
-<<<<<<< HEAD
+
 #Задание 4
 #print('To be', 'or not', 'to be', sep = '\n')
 
@@ -237,18 +237,23 @@
 #Пользователь вводит строку
 #необходиомо её проверить на палиндроме
 #кок, а буду я у дуба.
-user_string = input('Введите строку для проверки на Палиндром: ')
-counter_letter = len(user_string)#фунция подсчёта кол-во элементов
-value_user = True #Переменнная для проверки палиндромов
-for letter_begin in range(0, counter_letter):
-    for letter_end in range(counter_letter, 0, -1):
-        print('Проверяется буква:',user_string[letter_begin])
-        print('Проверяется буква:',user_string[letter_end])
-        if letter_end != letter_end:
-            break
-    if value_user == False:
-        print('Слово не является палиндромом')
-        break
-=======
->>>>>>> c72e1007333ed2f60dde80e208dbd0ced626ff8d
->>>>>>> 71cbee089890edec04808d1a904aa99b8a9d8f8e
+# user_string = input('Введите строку для проверки на Палиндром: ')
+# counter_letter = len(user_string)#фунция подсчёта кол-во элементов
+# value_user = True #Переменнная для проверки палиндромов
+# for letter_begin in range(0, counter_letter):
+#     for letter_end in range(counter_letter, 0, -1):
+#         print('Проверяется буква:',user_string[letter_begin])
+#         print('Проверяется буква:',user_string[letter_end])
+#         if letter_end != letter_end:
+#             break
+#     if value_user == False:
+#         print('Слово не является палиндромом')
+#         break
+
+x = 5
+y = 0
+if x > 1 or x / y == 2:
+    print(1)
+else:
+    print(2)
+
