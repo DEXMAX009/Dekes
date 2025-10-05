@@ -445,7 +445,46 @@
 # print(count)
 
 
+#Практика 2 списки
 
+# Задание 1: Произведение элементов списка
+# def multiply_list(numbers):
+#     result = 1
+#     for num in numbers:
+#         result *= num
+#     return result
+
+# Задание 2: Поиск минимума без встроенных функций
+# def find_min(numbers):
+#     if not numbers:
+#         return None
+#     min_val = numbers[0]
+#     for num in numbers:
+#         if num < min_val:
+#             min_val = num
+#     return min_val
+
+# Задание 3
+# def is_prime(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
+
+# def count_primes(numbers):
+#     count = 0
+#     for num in numbers:
+#         if is_prime(num):
+#             count += 1
+#     return count
+
+# Задание 4
+# def remove_number(numbers, target):
+#     initial_len = len(numbers)
+#     numbers[:] = [x for x in numbers if x != target]
+#     return initial_len - len(numbers)
 
 #append(5)
 #insert(0, 5)
