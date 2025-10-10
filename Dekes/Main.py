@@ -452,7 +452,7 @@
 #         count += 1
 # print(count)
 
-<<<<<<< HEAD
+
 
 #Практика 2 списки
 
@@ -495,8 +495,8 @@
 #     numbers[:] = [x for x in numbers if x != target]
 #     return initial_len - len(numbers)
 
-=======
->>>>>>> a46a75f666f6d2a84654839b02fa251a8cb14794
+
+
 #append(5)
 #insert(0, 5)
 #pop()
@@ -600,21 +600,107 @@
 #             list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
 # print(f"финальный список: {list_booble}")
 
-import random
-N = 20
-list_booble = []
-for i in range(N):
-    list_booble.append(random.randint(-10, 10))
-print(f"Начальный список: {list_booble}")
+# import random
+# N = 20
+# list_booble = []
+# for i in range(N):
+#     list_booble.append(random.randint(-10, 10))
+# print(f"Начальный список: {list_booble}")
+#
+# for i in range (N//2):
+#     for j in range(N//2 - 1 - i):
+#         if list_booble[j] < list_booble[j + 1]:
+#             list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+#
+# for i in range (N//2):
+#     for j in range(N//2, N - 1):
+#         if list_booble[j] > list_booble[j + 1]:
+#             list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+#
+# print(f"финальный список: {list_booble}")
 
-for i in range (N//2):
-    for j in range(N//2 - 1 - i):
-        if list_booble[j] < list_booble[j + 1]:
-            list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+#Кортежи(tuple) - это неизменяемая структура данных, кот. по своему подобию похожа на список.
+# list = [1, 2, 3]
+# list.append(2)
+# list.pop()
+# del list
+# tupleB = tuple(4, 5, 6)
+# tupleA = (1, 2, 3)
+# print(type(tupleA))
+# print(tupleA)
+# #tupleA[1] = 20 #TypeError
+# #Удаление кортежей
+# del tupleB
+# print(tupleB)
 
-for i in range (N//2):
-    for j in range(N//2, N - 1):
-        if list_booble[j] > list_booble[j + 1]:
-            list_booble[j], list_booble[j + 1] = list_booble[j+1], list_booble[j]
+#Преобразование типа
+list = [1, 2, 3, 4, 5]
+print(type(list), list)
+tpl = tuple(list)
+print(type(list), tpl)
 
-print(f"финальный список: {list_booble}")
+#Словари = это неупорядочная структура данных, позволяет хранить пары "Ключ - значение"
+dictionari = {
+                "Персона": "Человек",
+                "Марафон": "Гонка беунов длинной около 26 миль",
+                "Противостояние": "Оставаться сильным, несмотря на сложность"
+                "Бежать": "Даигаться быстрее"
+
+              }
+gender_dict = {0: "Жен", 1: "Муж"}
+story_count = {"Сто": 100, "Девяносто":90,"Десять":10,  "Пять": 5}
+'''
+dict = { (1, 2, 3) :"Кортеж может быть ключём",
+        "Бежать":"Строка тоже",
+        ['носок', 1, 2]:"списки не могут"
+        1.0: "Дробный тип нем могут"
+        }
+Изм. типы данных в качестве ключа выступать не могут(HEXЭШИРУЕТСЯ)
+int(1) = float(1.0) = True 
+
+
+'''
+d = {}
+d = {"dict_key":1, "dictionary":2}
+print(d)
+d = dict( [(1,1), (2,1)] )
+d_str = (  ("ab", "cd")  )
+d = dict.fromkeys(['a','b'])
+print(d)
+key_list = ['marvel', 'dc']
+value_list = ['Spiderman', 'Flash']
+superhero_dict = dict(zip(key_list, value_list))
+print(superhero_dict)
+d = {a : a**2 for a in range(7)}
+print(d)
+#Добавление пар
+d['туфля'] = 'обувь'
+print(d)
+#Удаление пар
+del d['туфля']
+superhero_dict.clear() #Очистка словаря
+b = d.copy() #Копирование словаря
+print(d.get(1))
+#d.update('ключ': 'значение', 'ключНовый':'ЗначениеНовогоключа'
+#d.values()
+#d.items()
+#d.keys()
+for key, value in story_count.items():
+    print(key, value)
+for key in story_count.keys():
+    print(key)
+#Множество - set
+sets = {0,1,2,3,4}
+fset = frozenset({2,3,4})
+lists = [1,2,3,4]
+tuples = (7,8,9)
+new_set = sets.union(lists, tuples, fset)
+#set.intersection()
+#set.difference()
+#set.symmotrie_difference()
+#set.copy()
+#set.update()
+#set.intersection_update()
+#set.symmetrie_difference_update()
+#set.add()
+set.remove
