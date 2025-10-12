@@ -634,73 +634,94 @@
 # print(tupleB)
 
 #Преобразование типа
-list = [1, 2, 3, 4, 5]
-print(type(list), list)
-tpl = tuple(list)
-print(type(list), tpl)
+# list = [1, 2, 3, 4, 5]
+# print(type(list), list)
+# tpl = tuple(list)
+# print(type(list), tpl)
+#
+# #Словари = это неупорядочная структура данных, позволяет хранить пары "Ключ - значение"
+# dictionari = {
+#                 "Персона": "Человек",
+#                 "Марафон": "Гонка беунов длинной около 26 миль",
+#                 "Противостояние": "Оставаться сильным, несмотря на сложность"
+#                 "Бежать": "Даигаться быстрее"
+#
+#               }
+# gender_dict = {0: "Жен", 1: "Муж"}
+# story_count = {"Сто": 100, "Девяносто":90,"Десять":10,  "Пять": 5}
+# '''
+# dict = { (1, 2, 3) :"Кортеж может быть ключём",
+#         "Бежать":"Строка тоже",
+#         ['носок', 1, 2]:"списки не могут"
+#         1.0: "Дробный тип нем могут"
+#         }
+# Изм. типы данных в качестве ключа выступать не могут(HEXЭШИРУЕТСЯ)
+# int(1) = float(1.0) = True
+#
+#
+# '''
+# d = {}
+# d = {"dict_key":1, "dictionary":2}
+# print(d)
+# d = dict( [(1,1), (2,1)] )
+# d_str = (  ("ab", "cd")  )
+# d = dict.fromkeys(['a','b'])
+# print(d)
+# key_list = ['marvel', 'dc']
+# value_list = ['Spiderman', 'Flash']
+# superhero_dict = dict(zip(key_list, value_list))
+# print(superhero_dict)
+# d = {a : a**2 for a in range(7)}
+# print(d)
+# #Добавление пар
+# d['туфля'] = 'обувь'
+# print(d)
+# #Удаление пар
+# del d['туфля']
+# superhero_dict.clear() #Очистка словаря
+# b = d.copy() #Копирование словаря
+# print(d.get(1))
+# #d.update('ключ': 'значение', 'ключНовый':'ЗначениеНовогоключа'
+# #d.values()
+# #d.items()
+# #d.keys()
+# for key, value in story_count.items():
+#     print(key, value)
+# for key in story_count.keys():
+#     print(key)
+# #Множество - set
+# sets = {0,1,2,3,4}
+# fset = frozenset({2,3,4})
+# lists = [1,2,3,4]
+# tuples = (7,8,9)
+# new_set = sets.union(lists, tuples, fset)
+# #set.intersection()
+# #set.difference()
+# #set.symmotrie_difference()
+# #set.copy()
+# #set.update()
+# #set.intersection_update()
+# #set.symmetrie_difference_update()
+# #set.add()
+# set.remove
 
-#Словари = это неупорядочная структура данных, позволяет хранить пары "Ключ - значение"
-dictionari = {
-                "Персона": "Человек",
-                "Марафон": "Гонка беунов длинной около 26 миль",
-                "Противостояние": "Оставаться сильным, несмотря на сложность"
-                "Бежать": "Даигаться быстрее"
+import random
 
-              }
-gender_dict = {0: "Жен", 1: "Муж"}
-story_count = {"Сто": 100, "Девяносто":90,"Десять":10,  "Пять": 5}
-'''
-dict = { (1, 2, 3) :"Кортеж может быть ключём",
-        "Бежать":"Строка тоже",
-        ['носок', 1, 2]:"списки не могут"
-        1.0: "Дробный тип нем могут"
-        }
-Изм. типы данных в качестве ключа выступать не могут(HEXЭШИРУЕТСЯ)
-int(1) = float(1.0) = True 
+# Задание 1
+print("ЗАДАНИЕ 1")
+print("=" * 50)
 
+# Создаем список из 20 случайных элементов от -10 до 10
+original_list_1 = [random.randint(-10, 10) for _ in range(20)]
+print(f"Начальный список: {original_list_1}")
 
-'''
-d = {}
-d = {"dict_key":1, "dictionary":2}
-print(d)
-d = dict( [(1,1), (2,1)] )
-d_str = (  ("ab", "cd")  )
-d = dict.fromkeys(['a','b'])
-print(d)
-key_list = ['marvel', 'dc']
-value_list = ['Spiderman', 'Flash']
-superhero_dict = dict(zip(key_list, value_list))
-print(superhero_dict)
-d = {a : a**2 for a in range(7)}
-print(d)
-#Добавление пар
-d['туфля'] = 'обувь'
-print(d)
-#Удаление пар
-del d['туфля']
-superhero_dict.clear() #Очистка словаря
-b = d.copy() #Копирование словаря
-print(d.get(1))
-#d.update('ключ': 'значение', 'ключНовый':'ЗначениеНовогоключа'
-#d.values()
-#d.items()
-#d.keys()
-for key, value in story_count.items():
-    print(key, value)
-for key in story_count.keys():
-    print(key)
-#Множество - set
-sets = {0,1,2,3,4}
-fset = frozenset({2,3,4})
-lists = [1,2,3,4]
-tuples = (7,8,9)
-new_set = sets.union(lists, tuples, fset)
-#set.intersection()
-#set.difference()
-#set.symmotrie_difference()
-#set.copy()
-#set.update()
-#set.intersection_update()
-#set.symmetrie_difference_update()
-#set.add()
-set.remove
+# Находим середину списка
+mid = len(original_list_1) // 2
+
+# Сортируем левую половину по возрастанию, правую - по убыванию
+left_sorted = sorted(original_list_1[:mid])
+right_sorted = sorted(original_list_1[mid:], reverse=True)
+
+# Объединяем обе половины
+result_1 = left_sorted + right_sorted
+print(f"Результат: {result_1}")
