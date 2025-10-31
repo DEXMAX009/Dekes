@@ -115,6 +115,77 @@
 # b = int(input('Введите число'))
 # c = int(input('Введите число'))
 
+
+# n = int(input())
+# if n % != 0:
+#     print('Делится на 7')
+# n = 957
+# print(n % 10)# посл цифра
+# print(n // 10)# отсекает последнюю цифру
+
+# n = int(input('Enter number:'))
+#
+# a = n % 10
+# n = n // 10
+# b = n % 10
+# n = n // 10
+# c = n % 10
+# print(a + b + c)
+
+
+
+#Блок 1 задание 2
+
+# a = int(input('Введите число'))
+# b = (a % 10)
+# if b < a:
+#     print('Первое число меньше')
+# else:
+#     print('Первое число больше')
+
+
+
+#Блок 2 задание 1
+
+# r = int(input('Введите число'))
+# S = 3.14 * r ** 2
+# C = 2 * 3.14 * r
+# print(S)
+# print(C)
+
+
+#блок 2 задание 2
+# year = int(input('Введите возраст'))
+# if year > 18 or year = 18:
+#     print('Пропуск в стрипуху разрешён')
+# else:
+#     print('Пропуск запрещён! Гуляй малолетка')
+
+#блок 2 задание 3
+
+# a = int(input('Введите число'))
+# b = int(input('Введите число'))
+# c = int(input('Введите число'))
+#
+# if a >= b  and a >= c:
+#     print(a)
+# if b >= a and b >= c:
+#     print(b)
+# if c >= a and c >= b:
+#     print(c)
+
+#блок 2 задание 4
+
+# a = int(input('Введите сторону треугольника'))
+# b = int(input('Введите сторону треугольника'))
+# c = int(input('Введите сторону треугольника'))
+#
+# if (b + c > a) and (c + a > b) and (b + a > c):
+#     print('Такой треугольник существует')
+# else:
+#     print('Такого трегольника не существует')
+
+
 # Week_day = int('Введите число')
 # if Week_day == 1:
 #     print('Понедельник')
@@ -182,7 +253,11 @@
 #         print('Fizz')
 #     elif a % 5 == 0:
 #         print('Buzz')
+<<<<<<< HEAD
+#     elif a % 5 == 0 and a % 3 == 0:
+=======
 #     elif a % 5 == 0 and a % == 0:
+>>>>>>> 925b52da2036127f7ab1ed68f08ce0ce84720492
 #         print('Fizz Buzz')
 #     else:
 #         print(a)
@@ -190,6 +265,28 @@
 # else:
 #     print('Неверно')
 
+<<<<<<< HEAD
+# user_string = input("Введите ариф. выражение:")
+# result = ''
+# value1 = ''
+# value2 = ''
+# letter = ''
+# letter_index = 0
+# for i in range (0,len(user_string)):
+#     if user_string[i] in '+-*/':
+#         letter = user_string[i]
+#         letter_index = i
+# #поиск первого числа
+# for i in range(0, letter_index):
+#     value1 += user_string[i]
+# #поиск второго
+# for i in range(letter_index + 1, len(user_string)):
+#     value2 += user_string[i]
+# value1 = int(value1)
+# value2 = int(value2)
+# if letter == '+':
+#     result = value1 + value2
+=======
 #Практика 2 Задание 1
 
 # a = int(input('Введите число'))
@@ -253,8 +350,21 @@
 #     if value_user == False:
 #         print('Слово не является палиндромом')
 #         break
+>>>>>>> 925b52da2036127f7ab1ed68f08ce0ce84720492
 
+# elif letter == '-':
+#     result = value1 - value2
+#
+# elif letter == '*':
+#     result = value1 * value2
+#
+# elif letter == '/':
+#     result = value1 / value2
+# print('Вычисление равно:', result)
 
+user_input = input('Введите строку: ')
+reversed_string = user_input[: : -1]
+print('Результат:', reversed_string) 
 
 
 #Практика 2
