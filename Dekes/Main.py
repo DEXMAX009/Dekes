@@ -253,11 +253,11 @@
 #         print('Fizz')
 #     elif a % 5 == 0:
 #         print('Buzz')
-<<<<<<< HEAD
+
 #     elif a % 5 == 0 and a % 3 == 0:
-=======
+
 #     elif a % 5 == 0 and a % == 0:
->>>>>>> 925b52da2036127f7ab1ed68f08ce0ce84720492
+
 #         print('Fizz Buzz')
 #     else:
 #         print(a)
@@ -265,7 +265,7 @@
 # else:
 #     print('Неверно')
 
-<<<<<<< HEAD
+
 # user_string = input("Введите ариф. выражение:")
 # result = ''
 # value1 = ''
@@ -286,7 +286,7 @@
 # value2 = int(value2)
 # if letter == '+':
 #     result = value1 + value2
-=======
+
 #Практика 2 Задание 1
 
 # a = int(input('Введите число'))
@@ -350,7 +350,7 @@
 #     if value_user == False:
 #         print('Слово не является палиндромом')
 #         break
->>>>>>> 925b52da2036127f7ab1ed68f08ce0ce84720492
+
 
 # elif letter == '-':
 #     result = value1 - value2
