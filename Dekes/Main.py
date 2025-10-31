@@ -705,23 +705,114 @@
 # #set.add()
 # set.remove
 
-import random
+# import random
+#
+# # Задание 1
+# print("ЗАДАНИЕ 1")
+# print("=" * 50)
+#
+# # Создаем список из 20 случайных элементов от -10 до 10
+# original_list_1 = [random.randint(-10, 10) for _ in range(20)]
+# print(f"Начальный список: {original_list_1}")
+#
+# # Находим середину списка
+# mid = len(original_list_1) // 2
+#
+# # Сортируем левую половину по возрастанию, правую - по убыванию
+# left_sorted = sorted(original_list_1[:mid])
+# right_sorted = sorted(original_list_1[mid:], reverse=True)
+#
+# # Объединяем обе половины
+# result_1 = left_sorted + right_sorted
+# print(f"Результат: {result_1}")
 
-# Задание 1
-print("ЗАДАНИЕ 1")
-print("=" * 50)
 
-# Создаем список из 20 случайных элементов от -10 до 10
-original_list_1 = [random.randint(-10, 10) for _ in range(20)]
-print(f"Начальный список: {original_list_1}")
+#Задание 1
+# Словари с очками для букв
+points_en = {
+    1: 'AEIOULNSTR',
+    2: 'DG',
+    3: 'BCMP',
+    4: 'FHVWY',
+    5: 'K',
+    8: 'JX',
+    10: 'QZ'
+}
 
-# Находим середину списка
-mid = len(original_list_1) // 2
+points_ru = {
+    1: 'АВЕИНОРСТ',
+    2: 'ДКЛМПУ',
+    3: 'БГЁЬЯ',
+    4: 'ЙЫ',
+    5: 'ЖЗХЦЧ',
+    8: 'ШЭЮ',
+    10: 'ФЩЪ'
+}
 
-# Сортируем левую половину по возрастанию, правую - по убыванию
-left_sorted = sorted(original_list_1[:mid])
-right_sorted = sorted(original_list_1[mid:], reverse=True)
+word = input("Введите слово: ").upper()
 
-# Объединяем обе половины
-result_1 = left_sorted + right_sorted
-print(f"Результат: {result_1}")
+# Проверяем язык слова
+if word[0] in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+    points_dict = points_en
+else:
+    points_dict = points_ru
+
+# Считаем очки
+score = 0
+for letter in word:
+    for point, letters in points_dict.items():
+        if letter in letters:
+            score += point
+
+print(f"Кол-во очков: {score}")
+
+#Задание 2
+backpack = {
+    'Зажигалка': 20,
+    'Компас': 100,
+    'Фрукты': 500,
+    'Куртка': 600,
+    'Бинокль': 400,
+    'Аптечка': 200,
+    'Палатка': 5500,
+    'Котелок': 3000
+}
+
+max_weight = int(input("Введите допустимый вес рюкзака (в кг): ")) * 1000
+
+print("Могу взять:")
+for item, weight in backpack.items():
+    if weight <= max_weight:
+        print(f"{item} - {weight}г")
+
+print("\nНе могу взять:")
+for item, weight in backpack.items():
+    if weight > max_weight:
+        print(f"{item} - {weight}г")
+
+
+#Задание 3
+
+phone_book = {
+    "Маша": {
+        'телефон': '+79221234567',
+        'vk': 'vk.com/masha',
+        'youtube': 'youtube.com/masha',
+        'telegram': 't.me/masha'
+    },
+    "Паша": {
+        'телефон': '+79151234567',
+        'vk': 'vk.com/pasha',
+        'youtube': 'youtube.com/pasha',
+        'telegram': 't.me/pasha'
+    }
+}
+
+name = input("Введите имя контакта: ").capitalize()
+
+if name in phone_book:
+    print(f"\nДанные для {name}:")
+    for key, value in phone_book[name].items():
+        print(f"{key}: {value}")
+else:
+    print("Контакт не найден")
