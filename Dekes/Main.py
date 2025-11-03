@@ -837,92 +837,38 @@ print('Результат:', reversed_string)
 # print(f"Результат: {result_1}")
 
 
-#Задание 1
-# Словари с очками для букв
-points_en = {
-    1: 'AEIOULNSTR',
-    2: 'DG',
-    3: 'BCMP',
-    4: 'FHVWY',
-    5: 'K',
-    8: 'JX',
-    10: 'QZ'
-}
-
-points_ru = {
-    1: 'АВЕИНОРСТ',
-    2: 'ДКЛМПУ',
-    3: 'БГЁЬЯ',
-    4: 'ЙЫ',
-    5: 'ЖЗХЦЧ',
-    8: 'ШЭЮ',
-    10: 'ФЩЪ'
-}
-
-word = input("Введите слово: ").upper()
-
-# Проверяем язык слова
-if word[0] in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
-    points_dict = points_en
-else:
-    points_dict = points_ru
-
-# Считаем очки
-score = 0
-for letter in word:
-    for point, letters in points_dict.items():
-        if letter in letters:
-            score += point
-
-print(f"Кол-во очков: {score}")
-
-#Задание 2
-backpack = {
-    'Зажигалка': 20,
-    'Компас': 100,
-    'Фрукты': 500,
-    'Куртка': 600,
-    'Бинокль': 400,
-    'Аптечка': 200,
-    'Палатка': 5500,
-    'Котелок': 3000
-}
-
-max_weight = int(input("Введите допустимый вес рюкзака (в кг): ")) * 1000
-
-print("Могу взять:")
-for item, weight in backpack.items():
-    if weight <= max_weight:
-        print(f"{item} - {weight}г")
-
-print("\nНе могу взять:")
-for item, weight in backpack.items():
-    if weight > max_weight:
-        print(f"{item} - {weight}г")
+# Задание 1
+def print_quote():
+    print("\"Don't compare yourself with anyone in this world…\nif you do so, you are insulting yourself.\"")
+    print("\nBill Gates")
 
 
-#Задание 3
+# Задание 2
+def print_even_numbers(start, end):
+    for num in range(start, end + 1):
+        if num % 2 == 0:
+            print(num, end=' ')
+    print()
 
-phone_book = {
-    "Маша": {
-        'телефон': '+79221234567',
-        'vk': 'vk.com/masha',
-        'youtube': 'youtube.com/masha',
-        'telegram': 't.me/masha'
-    },
-    "Паша": {
-        'телефон': '+79151234567',
-        'vk': 'vk.com/pasha',
-        'youtube': 'youtube.com/pasha',
-        'telegram': 't.me/pasha'
-    }
-}
 
-name = input("Введите имя контакта: ").capitalize()
+# Задание 3
+def draw_square(side_length, char, filled):
+    for i in range(side_length):
+        if filled or i == 0 or i == side_length - 1:
+            print(char * side_length)
+        else:
+            print(char + ' ' * (side_length - 2) + char)
 
-if name in phone_book:
-    print(f"\nДанные для {name}:")
-    for key, value in phone_book[name].items():
-        print(f"{key}: {value}")
-else:
-    print("Контакт не найден")
+
+
+    print("Задание 1:")
+    print_quote()
+
+    print("\nЗадание 2:")
+    print_even_numbers(3, 11)
+
+    print("\nЗадание 3 (пустой квадрат):")
+    draw_square(5, '*', False)
+
+    print("\nЗадание 3 (заполненный квадрат):")
+    draw_square(5, '*', True)
