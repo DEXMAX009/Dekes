@@ -872,7 +872,7 @@
 #
 #     print("\nЗадание 3 (заполненный квадрат):")
 #     draw_square(5, '*', True)
-
+#ПРАКТИКА 1
 # import random
 # class Number:
 #     def __init__(self, list1):
@@ -900,6 +900,12 @@
 #                         self.list1[j], self.list1[j+1] = self.list1[j+1], self.list1[j]
 #             self.printf()
 
+# list1 = [random.randint(-10, 10) for i in range(10)]
+# number = Number(list1)
+# number.printf()
+# number.mysort()
+
+#ПРАКТИКА 2
 class Student:
     def __init__(self, grades):
         self.grades = grades
@@ -990,11 +996,32 @@ while True:
 
 
 
-<<<<<<< HEAD
-=======
-list1 = [random.randint(-10, 10) for i in range(10)]
-number = Number(list1)
-number.printf()
-number.mysort()
+'''
+# 1. Как в программе представлены дни рождения?
+Ответ: В программе дни рождения представлены как числа от 1 до 365, где каждое число соответствует дню в году
+(1 = 1 января, 365 = 31 декабря). Это позволяет эффективно сравнивать совпадения.
 
->>>>>>> 916c77a4ffcebc1807362a9a4c26d7d3d0b25921
+# 2
+# Было:
+if not (1 <= num_bdays <= 100):
+# Заменить на:
+if num_bdays < 1:
+
+# 3
+TypeError: 'str' cannot be interpreted as an integer
+
+# 4
+months = ["January", "February", ..., "December"]
+
+# 5
+# Было:
+if i % 10000 == 0:
+    print(f"{i} simulations run...")
+# Замените на:
+if i % 1000 == 0:
+    print(f"{i} simulations run...")
+
+
+'''
+
+
