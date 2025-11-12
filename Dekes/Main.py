@@ -861,14 +861,3 @@ def draw_square(side_length, char, filled):
 
 
 
-    print("Задание 1:")
-    print_quote()
-
-    print("\nЗадание 2:")
-    print_even_numbers(3, 11)
-
-    print("\nЗадание 3 (пустой квадрат):")
-    draw_square(5, '*', False)
-
-    print("\nЗадание 3 (заполненный квадрат):")
-    draw_square(5, '*', True)
