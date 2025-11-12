@@ -362,9 +362,9 @@
 #     result = value1 / value2
 # print('Вычисление равно:', result)
 
-user_input = input('Введите строку: ')
-reversed_string = user_input[: : -1]
-print('Результат:', reversed_string) 
+# user_input = input('Введите строку: ')
+# reversed_string = user_input[: : -1]
+# print('Результат:', reversed_string)
 
 
 #Практика 2
@@ -837,27 +837,164 @@ print('Результат:', reversed_string)
 # print(f"Результат: {result_1}")
 
 
-# Задание 1
-def print_quote():
-    print("\"Don't compare yourself with anyone in this world…\nif you do so, you are insulting yourself.\"")
-    print("\nBill Gates")
+# # Задание 1
+# def print_quote():
+#     print("\"Don't compare yourself with anyone in this world…\nif you do so, you are insulting yourself.\"")
+#     print("\nBill Gates")
+#
+#
+# # Задание 2
+# def print_even_numbers(start, end):
+#     for num in range(start, end + 1):
+#         if num % 2 == 0:
+#             print(num, end=' ')
+#     print()
+#
+#
+# # Задание 3
+# def draw_square(side_length, char, filled):
+#     for i in range(side_length):
+#         if filled or i == 0 or i == side_length - 1:
+#             print(char * side_length)
+#         else:
+#             print(char + ' ' * (side_length - 2) + char)
+#
+#
+#
+#     print("Задание 1:")
+#     print_quote()
+#
+#     print("\nЗадание 2:")
+#     print_even_numbers(3, 11)
+#
+#     print("\nЗадание 3 (пустой квадрат):")
+#     draw_square(5, '*', False)
+#
+#     print("\nЗадание 3 (заполненный квадрат):")
+#     draw_square(5, '*', True)
 
+# import random
+# class Number:
+#     def __init__(self, list1):
+#         self.list1 = list1
+#         self.count = len(self.list1)
+#         self.drob = int(self.count*0.66)
+#
+#     def print(self):
+#         print("Текущий список:", list1)
+#     def mysort(self):
+#         srsum = 0
+#         for i in self.list1:
+#             srsum += 1
+#         srsum = srsum/self.count
+#         if srsum > 0:
+#             for i in range(self.drob):
+#                 for j in range(self.drob-1-i):
+#                     if self.list1[j] > self.list1[j+1]:
+#                         self.list1[j], self.list1[j+1] = self.list1[j+1], self.list1[j]
+#             self.printf()
+#         else:
+#             for i in range(self.count - self.drob):
+#                 for j in range(self.count - self.drob-1-i):
+#                     if self.list1[j] > self.list1[j+1]:
+#                         self.list1[j], self.list1[j+1] = self.list1[j+1], self.list1[j]
+#             self.printf()
 
-# Задание 2
-def print_even_numbers(start, end):
-    for num in range(start, end + 1):
-        if num % 2 == 0:
-            print(num, end=' ')
-    print()
+class Student:
+    def __init__(self, grades):
+        self.grades = grades
+        self.count = len(grades)
 
+    def printf(self):
+        print("Оценки студента:", self.grades)
 
-# Задание 3
-def draw_square(side_length, char, filled):
-    for i in range(side_length):
-        if filled or i == 0 or i == side_length - 1:
-            print(char * side_length)
+    def resit_exam(self):
+        try:
+            index = int(input("Введите номер оценки (от 1 до 12): ")) - 1
+            if 0 <= index < self.count:
+                new_grade = int(input("Введите новую оценку (1-12): "))
+                if 1 <= new_grade <= 12:
+                    self.grades[index] = new_grade
+                    print("Оценка изменена.")
+                else:
+                    print("Ошибка: оценка должна быть от 1 до 12.")
+            else:
+                print("Ошибка: неправильный номер.")
+        except ValueError:
+            print("Ошибка ввода.")
+
+    def check_scholarship(self):
+        avg = sum(self.grades) / self.count
+        print(f"Средний балл: {round(avg, 2)}")
+        if avg >= 10.7:
+            print("Студент получает стипендию.")
         else:
-            print(char + ' ' * (side_length - 2) + char)
+            print("Студент не получает стипендию.")
+
+    def sort_grades(self):
+        choice = input("Сортировать по возрастанию (введите +) или по убыванию (введите -): ")
+        if choice == "+":
+            for i in range(self.count - 1):
+                for j in range(self.count - i - 1):
+                    if self.grades[j] > self.grades[j + 1]:
+                        self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
+        elif choice == "-":
+            for i in range(self.count - 1):
+                for j in range(self.count - i - 1):
+                    if self.grades[j] < self.grades[j + 1]:
+                        self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
+        else:
+            print("Ошибка: неизвестный выбор.")
+        self.printf()
+
+
+grades = []
+
+print("Введите 10 оценок (от 1 до 12):")
+for i in range(10):
+    while True:
+        try:
+            n = int(input(f"Оценка {i + 1}: "))
+            if 1 <= n <= 12:
+                grades.append(n)
+                break
+            else:
+                print("Оценка должна быть от 1 до 12.")
+        except ValueError:
+            print("Введите число!")
+
+student = Student(grades)
+while True:
+    print("\nМеню:")
+    print("1 - Вывести оценки")
+    print("2 - Пересдать экзамен")
+    print("3 - Проверить, выходит ли стипендия")
+    print("4 - Отсортировать список")
+    print("0 - Выход")
+
+    choice = input("Выберите пункт меню: ")
+
+    if choice == "1":
+        student.printf()
+    elif choice == "2":
+        student.resit_exam()
+    elif choice == "3":
+        student.check_scholarship()
+    elif choice == "4":
+        student.sort_grades()
+    elif choice == "0":
+        print("Выход из программы.")
+        break
+    else:
+        print("Неверный выбор.")
 
 
 
+<<<<<<< HEAD
+=======
+list1 = [random.randint(-10, 10) for i in range(10)]
+number = Number(list1)
+number.printf()
+number.mysort()
+
+>>>>>>> 916c77a4ffcebc1807362a9a4c26d7d3d0b25921
