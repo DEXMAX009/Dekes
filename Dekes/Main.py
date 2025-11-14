@@ -1024,88 +1024,174 @@ if i % 1000 == 0:
 
 '''
 
-#Задание 1
-def task1_directory():
-    users_data = [
-        [103, "555-1234"],
-        [101, "555-9876"],
-        [105, "555-4321"],
-        [102, "555-6789"],
-        [104, "555-5555"]
-    ]
 
-    print("\n--- Программа 'Справочник' ---")
+class ListProcessor:
+    def __init__(self):
+        self.lists = []
+        self.combined_list = []
+
+    def input_lists(self):
+        """Ввод четырех списков целых чисел"""
+        print("Введите четыре списка целых чисел:")
+        for i in range(4):
+            while True:
+                try:
+                    user_input = input(f"Список {i + 1} (через пробел): ")
+                    numbers = list(map(int, user_input.split()))
+                    self.lists.append(numbers)
+                    break
+                except ValueError:
+                    print("Ошибка! Введите целые числа через пробел.")
+
+    def combine_lists(self):
+        """Объединение всех списков (Задание 1)"""
+        self.combined_list = []
+        for lst in self.lists:
+            self.combined_list.extend(lst)
+        return self.combined_list
+
+    def combine_unique_lists(self):
+        """Объединение только уникальных элементов (Задание 2)"""
+        self.combined_list = []
+
+        # Создаем множества для каждого списка
+        sets = [set(lst) for lst in self.lists]
+
+        # Находим элементы, которые уникальны для каждого списка
+        for i, current_set in enumerate(sets):
+            other_sets = sets[:i] + sets[i + 1:]  # Все множества кроме текущего
+
+            for element in current_set:
+                # Проверяем, что элемент отсутствует во всех других списках
+                is_unique = True
+                for other_set in other_sets:
+                    if element in other_set:
+                        is_unique = False
+                        break
+
+                if is_unique:
+                    self.combined_list.append(element)
+
+        return self.combined_list
+
+    def sort_list(self, order='asc'):
+        """Сортировка списка"""
+        if order == 'asc':
+            self.combined_list.sort()
+        elif order == 'desc':
+            self.combined_list.sort(reverse=True)
+        return self.combined_list
+
+    def linear_search(self, target):
+        """Линейный поиск"""
+        for i, value in enumerate(self.combined_list):
+            if value == target:
+                return i
+        return -1
+
+    def binary_search(self, target):
+        """Бинарный поиск (требует отсортированный список)"""
+        left, right = 0, len(self.combined_list) - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+            if self.combined_list[mid] == target:
+                return mid
+            elif self.combined_list[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return -1
+
+    def display_lists(self):
+        """Отображение всех списков"""
+        print("\nВведенные списки:")
+        for i, lst in enumerate(self.lists, 1):
+            print(f"Список {i}: {lst}")
+
+    def display_result(self):
+        """Отображение результата"""
+        print(f"Объединенный список: {self.combined_list}")
+
+
+def main():
+    processor = ListProcessor()
 
     while True:
-        print("\nВыберите действие:")
-        print("1. Отсортировать по идентификационным кодам")
-        print("2. Отсортировать по номерам телефона")
-        print("3. Вывести список пользователей")
-        print("4. Выход")
+        print("\n" + "=" * 50)
+        print("Практика 3 - Обработка списков")
+        print("=" * 50)
+        print("1. Задание 1 - Объединение всех элементов")
+        print("2. Задание 2 - Объединение уникальных элементов")
+        print("3. Выйти")
 
-        choice = input("Введите номер действия: ")
+        choice = input("Выберите задание (1-3): ")
+
+        if choice == '3':
+            print("Выход из программы.")
+            break
+
+        if choice not in ['1', '2']:
+            print("Неверный выбор! Попробуйте снова.")
+            continue
+
+        # Ввод списков
+        processor.input_lists()
+        processor.display_lists()
 
         if choice == '1':
-            users_data.sort(key=lambda user: user[0])
-            print("Список отсортирован по идентификационным кодам.")
+            # Задание 1
+            processor.combine_lists()
+            print("\n--- Задание 1 ---")
+            print("Все списки объединены.")
+
         elif choice == '2':
-            users_data.sort(key=lambda user: user[1])
-            print("Список отсортирован по номерам телефона.")
-        elif choice == '3':
-            if not users_data:
-                print("Список пользователей пуст.")
-            else:
-                print("\n--- Текущий список пользователей ---")
-                for user in users_data:
-                    print(f"Код: {user[0]}, Телефон: {user[1]}")
-        elif choice == '4':
-            print("Выход из программы 'Справочник'.")
-            break
+            # Задание 2
+            processor.combine_unique_lists()
+            print("\n--- Задание 2 ---")
+            print("Объединены только уникальные элементы.")
+
+        processor.display_result()
+
+        # Сортировка
+        sort_choice = input("\nВыберите сортировку (1 - по возрастанию, 2 - по убыванию): ")
+        if sort_choice == '1':
+            processor.sort_list('asc')
+            print("Список отсортирован по возрастанию.")
+        elif sort_choice == '2':
+            processor.sort_list('desc')
+            print("Список отсортирован по убыванию.")
         else:
-            print("Неверный ввод. Пожалуйста, выберите действие от 1 до 4.")
-#Задание 2
+            print("Сортировка не выполнена.")
 
-def task2_books():
-    books_data = [
-        ["Python Crash Course", 2019],
-        ["Automate the Boring Stuff with Python", 2015],
-        ["Clean Code", 2008],
-        ["The Hitchhiker's Guide to the Galaxy", 1979],
-        ["Learning Python", 2013],
-        ["Eloquent JavaScript", 2018]
-    ]
+        processor.display_result()
 
-    print("\n--- Программа 'Книги' ---")
+        # Поиск
+        try:
+            search_value = int(input("\nВведите значение для поиска: "))
 
-    while True:
-        print("\nВыберите действие:")
-        print("1. Отсортировать по названию книг")
-        print("2. Отсортировать по годам выпуска")
-        print("3. Вывести список книг")
-        print("4. Выход")
+            if choice == '1':
+                # Линейный поиск для Задания 1
+                index = processor.linear_search(search_value)
+                if index != -1:
+                    print(f"Значение {search_value} найдено на позиции {index}")
+                else:
+                    print(f"Значение {search_value} не найдено")
 
-        choice = input("Введите номер действия: ")
+            elif choice == '2':
+                # Бинарный поиск для Задания 2
+                index = processor.binary_search(search_value)
+                if index != -1:
+                    print(f"Значение {search_value} найдено на позиции {index}")
+                else:
+                    print(f"Значение {search_value} не найдено")
 
-        if choice == '1':
-            books_data.sort(key=lambda book: book[0])
-            print("Список книг отсортирован по названию.")
-        elif choice == '2':
-            books_data.sort(key=lambda book: book[1])
-            print("Список книг отсортирован по годам выпуска.")
-        elif choice == '3':
-            if not books_data:
-                print("Каталог книг пуст.")
-            else:
-                print("\n--- Текущий список книг ---")
-                for book in books_data:
-                    print(f"Название: '{book[0]}', Год: {book[1]}")
-        elif choice == '4':
-            print("Выход из программы 'Книги'.")
-            break
-        else:
-            print("Неверный ввод. Пожалуйста, выберите действие от 1 до 4.")
+        except ValueError:
+            print("Ошибка! Введите целое число для поиска.")
 
-if name == "main":
-    task2_books()
+
+if __name__ == "__main__":
+    main()
 
 
