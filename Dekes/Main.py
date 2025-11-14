@@ -906,93 +906,93 @@
 # number.mysort()
 
 #ПРАКТИКА 2
-class Student:
-    def __init__(self, grades):
-        self.grades = grades
-        self.count = len(grades)
-
-    def printf(self):
-        print("Оценки студента:", self.grades)
-
-    def resit_exam(self):
-        try:
-            index = int(input("Введите номер оценки (от 1 до 12): ")) - 1
-            if 0 <= index < self.count:
-                new_grade = int(input("Введите новую оценку (1-12): "))
-                if 1 <= new_grade <= 12:
-                    self.grades[index] = new_grade
-                    print("Оценка изменена.")
-                else:
-                    print("Ошибка: оценка должна быть от 1 до 12.")
-            else:
-                print("Ошибка: неправильный номер.")
-        except ValueError:
-            print("Ошибка ввода.")
-
-    def check_scholarship(self):
-        avg = sum(self.grades) / self.count
-        print(f"Средний балл: {round(avg, 2)}")
-        if avg >= 10.7:
-            print("Студент получает стипендию.")
-        else:
-            print("Студент не получает стипендию.")
-
-    def sort_grades(self):
-        choice = input("Сортировать по возрастанию (введите +) или по убыванию (введите -): ")
-        if choice == "+":
-            for i in range(self.count - 1):
-                for j in range(self.count - i - 1):
-                    if self.grades[j] > self.grades[j + 1]:
-                        self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
-        elif choice == "-":
-            for i in range(self.count - 1):
-                for j in range(self.count - i - 1):
-                    if self.grades[j] < self.grades[j + 1]:
-                        self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
-        else:
-            print("Ошибка: неизвестный выбор.")
-        self.printf()
-
-
-grades = []
-
-print("Введите 10 оценок (от 1 до 12):")
-for i in range(10):
-    while True:
-        try:
-            n = int(input(f"Оценка {i + 1}: "))
-            if 1 <= n <= 12:
-                grades.append(n)
-                break
-            else:
-                print("Оценка должна быть от 1 до 12.")
-        except ValueError:
-            print("Введите число!")
-
-student = Student(grades)
-while True:
-    print("\nМеню:")
-    print("1 - Вывести оценки")
-    print("2 - Пересдать экзамен")
-    print("3 - Проверить, выходит ли стипендия")
-    print("4 - Отсортировать список")
-    print("0 - Выход")
-
-    choice = input("Выберите пункт меню: ")
-
-    if choice == "1":
-        student.printf()
-    elif choice == "2":
-        student.resit_exam()
-    elif choice == "3":
-        student.check_scholarship()
-    elif choice == "4":
-        student.sort_grades()
-    elif choice == "0":
-        print("Выход из программы.")
-        break
-    else:
-        print("Неверный выбор.")
+# class Student:
+#     def __init__(self, grades):
+#         self.grades = grades
+#         self.count = len(grades)
+#
+#     def printf(self):
+#         print("Оценки студента:", self.grades)
+#
+#     def resit_exam(self):
+#         try:
+#             index = int(input("Введите номер оценки (от 1 до 12): ")) - 1
+#             if 0 <= index < self.count:
+#                 new_grade = int(input("Введите новую оценку (1-12): "))
+#                 if 1 <= new_grade <= 12:
+#                     self.grades[index] = new_grade
+#                     print("Оценка изменена.")
+#                 else:
+#                     print("Ошибка: оценка должна быть от 1 до 12.")
+#             else:
+#                 print("Ошибка: неправильный номер.")
+#         except ValueError:
+#             print("Ошибка ввода.")
+#
+#     def check_scholarship(self):
+#         avg = sum(self.grades) / self.count
+#         print(f"Средний балл: {round(avg, 2)}")
+#         if avg >= 10.7:
+#             print("Студент получает стипендию.")
+#         else:
+#             print("Студент не получает стипендию.")
+#
+#     def sort_grades(self):
+#         choice = input("Сортировать по возрастанию (введите +) или по убыванию (введите -): ")
+#         if choice == "+":
+#             for i in range(self.count - 1):
+#                 for j in range(self.count - i - 1):
+#                     if self.grades[j] > self.grades[j + 1]:
+#                         self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
+#         elif choice == "-":
+#             for i in range(self.count - 1):
+#                 for j in range(self.count - i - 1):
+#                     if self.grades[j] < self.grades[j + 1]:
+#                         self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
+#         else:
+#             print("Ошибка: неизвестный выбор.")
+#         self.printf()
+#
+#
+# grades = []
+#
+# print("Введите 10 оценок (от 1 до 12):")
+# for i in range(10):
+#     while True:
+#         try:
+#             n = int(input(f"Оценка {i + 1}: "))
+#             if 1 <= n <= 12:
+#                 grades.append(n)
+#                 break
+#             else:
+#                 print("Оценка должна быть от 1 до 12.")
+#         except ValueError:
+#             print("Введите число!")
+#
+# student = Student(grades)
+# while True:
+#     print("\nМеню:")
+#     print("1 - Вывести оценки")
+#     print("2 - Пересдать экзамен")
+#     print("3 - Проверить, выходит ли стипендия")
+#     print("4 - Отсортировать список")
+#     print("0 - Выход")
+#
+#     choice = input("Выберите пункт меню: ")
+#
+#     if choice == "1":
+#         student.printf()
+#     elif choice == "2":
+#         student.resit_exam()
+#     elif choice == "3":
+#         student.check_scholarship()
+#     elif choice == "4":
+#         student.sort_grades()
+#     elif choice == "0":
+#         print("Выход из программы.")
+#         break
+#     else:
+#         print("Неверный выбор.")
 
 
 
@@ -1044,14 +1044,14 @@ class ListProcessor:
                     print("Ошибка! Введите целые числа через пробел.")
 
     def combine_lists(self):
-        """Объединение всех списков (Задание 1)"""
+        """Объединение всех списков"""
         self.combined_list = []
         for lst in self.lists:
             self.combined_list.extend(lst)
         return self.combined_list
 
     def combine_unique_lists(self):
-        """Объединение только уникальных элементов (Задание 2)"""
+        """Объединение только уникальных элементов"""
         self.combined_list = []
 
         # Создаем множества для каждого списка
@@ -1120,10 +1120,9 @@ def main():
 
     while True:
         print("\n" + "=" * 50)
-        print("Практика 3 - Обработка списков")
         print("=" * 50)
-        print("1. Задание 1 - Объединение всех элементов")
-        print("2. Задание 2 - Объединение уникальных элементов")
+        print("1. Объединение всех элементов")
+        print("2. Объединение уникальных элементов")
         print("3. Выйти")
 
         choice = input("Выберите задание (1-3): ")
