@@ -906,93 +906,93 @@
 # number.mysort()
 
 #ПРАКТИКА 2
-class Student:
-    def __init__(self, grades):
-        self.grades = grades
-        self.count = len(grades)
-
-    def printf(self):
-        print("Оценки студента:", self.grades)
-
-    def resit_exam(self):
-        try:
-            index = int(input("Введите номер оценки (от 1 до 12): ")) - 1
-            if 0 <= index < self.count:
-                new_grade = int(input("Введите новую оценку (1-12): "))
-                if 1 <= new_grade <= 12:
-                    self.grades[index] = new_grade
-                    print("Оценка изменена.")
-                else:
-                    print("Ошибка: оценка должна быть от 1 до 12.")
-            else:
-                print("Ошибка: неправильный номер.")
-        except ValueError:
-            print("Ошибка ввода.")
-
-    def check_scholarship(self):
-        avg = sum(self.grades) / self.count
-        print(f"Средний балл: {round(avg, 2)}")
-        if avg >= 10.7:
-            print("Студент получает стипендию.")
-        else:
-            print("Студент не получает стипендию.")
-
-    def sort_grades(self):
-        choice = input("Сортировать по возрастанию (введите +) или по убыванию (введите -): ")
-        if choice == "+":
-            for i in range(self.count - 1):
-                for j in range(self.count - i - 1):
-                    if self.grades[j] > self.grades[j + 1]:
-                        self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
-        elif choice == "-":
-            for i in range(self.count - 1):
-                for j in range(self.count - i - 1):
-                    if self.grades[j] < self.grades[j + 1]:
-                        self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
-        else:
-            print("Ошибка: неизвестный выбор.")
-        self.printf()
-
-
-grades = []
-
-print("Введите 10 оценок (от 1 до 12):")
-for i in range(10):
-    while True:
-        try:
-            n = int(input(f"Оценка {i + 1}: "))
-            if 1 <= n <= 12:
-                grades.append(n)
-                break
-            else:
-                print("Оценка должна быть от 1 до 12.")
-        except ValueError:
-            print("Введите число!")
-
-student = Student(grades)
-while True:
-    print("\nМеню:")
-    print("1 - Вывести оценки")
-    print("2 - Пересдать экзамен")
-    print("3 - Проверить, выходит ли стипендия")
-    print("4 - Отсортировать список")
-    print("0 - Выход")
-
-    choice = input("Выберите пункт меню: ")
-
-    if choice == "1":
-        student.printf()
-    elif choice == "2":
-        student.resit_exam()
-    elif choice == "3":
-        student.check_scholarship()
-    elif choice == "4":
-        student.sort_grades()
-    elif choice == "0":
-        print("Выход из программы.")
-        break
-    else:
-        print("Неверный выбор.")
+# class Student:
+#     def __init__(self, grades):
+#         self.grades = grades
+#         self.count = len(grades)
+#
+#     def printf(self):
+#         print("Оценки студента:", self.grades)
+#
+#     def resit_exam(self):
+#         try:
+#             index = int(input("Введите номер оценки (от 1 до 12): ")) - 1
+#             if 0 <= index < self.count:
+#                 new_grade = int(input("Введите новую оценку (1-12): "))
+#                 if 1 <= new_grade <= 12:
+#                     self.grades[index] = new_grade
+#                     print("Оценка изменена.")
+#                 else:
+#                     print("Ошибка: оценка должна быть от 1 до 12.")
+#             else:
+#                 print("Ошибка: неправильный номер.")
+#         except ValueError:
+#             print("Ошибка ввода.")
+#
+#     def check_scholarship(self):
+#         avg = sum(self.grades) / self.count
+#         print(f"Средний балл: {round(avg, 2)}")
+#         if avg >= 10.7:
+#             print("Студент получает стипендию.")
+#         else:
+#             print("Студент не получает стипендию.")
+#
+#     def sort_grades(self):
+#         choice = input("Сортировать по возрастанию (введите +) или по убыванию (введите -): ")
+#         if choice == "+":
+#             for i in range(self.count - 1):
+#                 for j in range(self.count - i - 1):
+#                     if self.grades[j] > self.grades[j + 1]:
+#                         self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
+#         elif choice == "-":
+#             for i in range(self.count - 1):
+#                 for j in range(self.count - i - 1):
+#                     if self.grades[j] < self.grades[j + 1]:
+#                         self.grades[j], self.grades[j + 1] = self.grades[j + 1], self.grades[j]
+#         else:
+#             print("Ошибка: неизвестный выбор.")
+#         self.printf()
+#
+#
+# grades = []
+#
+# print("Введите 10 оценок (от 1 до 12):")
+# for i in range(10):
+#     while True:
+#         try:
+#             n = int(input(f"Оценка {i + 1}: "))
+#             if 1 <= n <= 12:
+#                 grades.append(n)
+#                 break
+#             else:
+#                 print("Оценка должна быть от 1 до 12.")
+#         except ValueError:
+#             print("Введите число!")
+#
+# student = Student(grades)
+# while True:
+#     print("\nМеню:")
+#     print("1 - Вывести оценки")
+#     print("2 - Пересдать экзамен")
+#     print("3 - Проверить, выходит ли стипендия")
+#     print("4 - Отсортировать список")
+#     print("0 - Выход")
+#
+#     choice = input("Выберите пункт меню: ")
+#
+#     if choice == "1":
+#         student.printf()
+#     elif choice == "2":
+#         student.resit_exam()
+#     elif choice == "3":
+#         student.check_scholarship()
+#     elif choice == "4":
+#         student.sort_grades()
+#     elif choice == "0":
+#         print("Выход из программы.")
+#         break
+#     else:
+#         print("Неверный выбор.")
 
 
 
@@ -1023,5 +1023,228 @@ if i % 1000 == 0:
 
 
 '''
+
+
+# class ListProcessor:
+#     def __init__(self):
+#         self.lists = []
+#         self.combined_list = []
+#
+#     def input_lists(self):
+#         print("Введите четыре списка целых чисел:")
+#         for i in range(4):
+#             while True:
+#                 try:
+#                     user_input = input(f"Список {i + 1} (через пробел): ")
+#                     numbers = list(map(int, user_input.split()))
+#                     self.lists.append(numbers)
+#                     break
+#                 except ValueError:
+#                     print("Ошибка! Введите целые числа через пробел.")
+#
+#     def combine_lists(self):
+#         """Объединение всех списков"""
+#         self.combined_list = []
+#         for lst in self.lists:
+#             self.combined_list.extend(lst)
+#         return self.combined_list
+#
+#     def combine_unique_lists(self):
+#         """Объединение только уникальных элементов"""
+#         self.combined_list = []
+#
+#         # Создаем множества для каждого списка
+#         sets = [set(lst) for lst in self.lists]
+#
+#         # Находим элементы, которые уникальны для каждого списка
+#         for i, current_set in enumerate(sets):
+#             other_sets = sets[:i] + sets[i + 1:]  # Все множества кроме текущего
+#
+#             for element in current_set:
+#                 # Проверяем, что элемент отсутствует во всех других списках
+#                 is_unique = True
+#                 for other_set in other_sets:
+#                     if element in other_set:
+#                         is_unique = False
+#                         break
+#
+#                 if is_unique:
+#                     self.combined_list.append(element)
+#
+#         return self.combined_list
+#
+#     def sort_list(self, order='asc'):
+#         """Сортировка списка"""
+#         if order == 'asc':
+#             self.combined_list.sort()
+#         elif order == 'desc':
+#             self.combined_list.sort(reverse=True)
+#         return self.combined_list
+#
+#     def linear_search(self, target):
+#         """Линейный поиск"""
+#         for i, value in enumerate(self.combined_list):
+#             if value == target:
+#                 return i
+#         return -1
+#
+#     def binary_search(self, target):
+#         """Бинарный поиск (требует отсортированный список)"""
+#         left, right = 0, len(self.combined_list) - 1
+#
+#         while left <= right:
+#             mid = (left + right) // 2
+#             if self.combined_list[mid] == target:
+#                 return mid
+#             elif self.combined_list[mid] < target:
+#                 left = mid + 1
+#             else:
+#                 right = mid - 1
+#
+#         return -1
+#
+#     def display_lists(self):
+#         """Отображение всех списков"""
+#         print("\nВведенные списки:")
+#         for i, lst in enumerate(self.lists, 1):
+#             print(f"Список {i}: {lst}")
+#
+#     def display_result(self):
+#         """Отображение результата"""
+#         print(f"Объединенный список: {self.combined_list}")
+#
+#
+# def main():
+#     processor = ListProcessor()
+#
+#     while True:
+#         print("\n" + "=" * 50)
+#         print("=" * 50)
+#         print("1. Объединение всех элементов")
+#         print("2. Объединение уникальных элементов")
+#         print("3. Выйти")
+#
+#         choice = input("Выберите задание (1-3): ")
+#
+#         if choice == '3':
+#             print("Выход из программы.")
+#             break
+#
+#         if choice not in ['1', '2']:
+#             print("Неверный выбор! Попробуйте снова.")
+#             continue
+#
+#         # Ввод списков
+#         processor.input_lists()
+#         processor.display_lists()
+#
+#         if choice == '1':
+#             # Задание 1
+#             processor.combine_lists()
+#             print("\n--- Задание 1 ---")
+#             print("Все списки объединены.")
+#
+#         elif choice == '2':
+#             # Задание 2
+#             processor.combine_unique_lists()
+#             print("\n--- Задание 2 ---")
+#             print("Объединены только уникальные элементы.")
+#
+#         processor.display_result()
+#
+#         # Сортировка
+#         sort_choice = input("\nВыберите сортировку (1 - по возрастанию, 2 - по убыванию): ")
+#         if sort_choice == '1':
+#             processor.sort_list('asc')
+#             print("Список отсортирован по возрастанию.")
+#         elif sort_choice == '2':
+#             processor.sort_list('desc')
+#             print("Список отсортирован по убыванию.")
+#         else:
+#             print("Сортировка не выполнена.")
+#
+#         processor.display_result()
+#
+#         # Поиск
+#         try:
+#             search_value = int(input("\nВведите значение для поиска: "))
+#
+#             if choice == '1':
+#                 # Линейный поиск для Задания 1
+#                 index = processor.linear_search(search_value)
+#                 if index != -1:
+#                     print(f"Значение {search_value} найдено на позиции {index}")
+#                 else:
+#                     print(f"Значение {search_value} не найдено")
+#
+#             elif choice == '2':
+#                 # Бинарный поиск для Задания 2
+#                 index = processor.binary_search(search_value)
+#                 if index != -1:
+#                     print(f"Значение {search_value} найдено на позиции {index}")
+#                 else:
+#                     print(f"Значение {search_value} не найдено")
+#
+#         except ValueError:
+#             print("Ошибка! Введите целое число для поиска.")
+#
+#
+# if __name__ == "__main__":
+#     main()
+
+import pygame
+import random
+from py2048_classes import Board
+from pygame.locals import(K_UP, K_DOWN, K_LEFT, K_RIGHT, K_ESCAPE, KEYDOWN, QUIT)
+
+TEXT_DARK = pygame.Color(119,118,100)
+TEXT_LIGHT = pygame.Color(255, 255, 255)
+BACKGROUND = pygame.Color(188, 173, 159)
+EMPTY = pygame.Color(286, 192, 178)
+TITLE_MAX = pygame.Color(18,91, 146)
+CELL_STYLES = {
+0: {"font": TEXT_DARK, "fill": EMPTY},
+1: {"font": TEXT_DARK, "fill": pygame.Color(239,229,218)},
+2: {"font": TEXT_DARK, "fill": pygame.Color(238,225,199)},
+3: {"font": TEXT_DARK, "fill": pygame.Color(242,177,121)},
+4: {"font": TEXT_LIGHT, "fill": pygame.Color(245,149,99)},
+5: {"font": TEXT_LIGHT, "fill": pygame.Color(247,127,96)},
+6: {"font": TEXT_LIGHT, "fill": pygame.Color(246,94,59)},
+7: {"font": TEXT_LIGHT, "fill": pygame.Color(241,219,147)},
+8: {"font": TEXT_LIGHT, "fill": pygame.Color(237,204,97)},
+9: {"font": TEXT_LIGHT, "fill": pygame.Color(235,193,57)},
+10: {"font": TEXT_LIGHT, "fill": pygame.Color(231,181,23)},
+11: {"font": TEXT_DARK, "fill": pygame.Color(192,154,16)},
+12: {"font": TEXT_LIGHT, "fill": pygame.Color(94,218,146)},
+13: {"font": TEXT_LIGHT, "fill": pygame.Color(37,187,100)},
+14: {"font": TEXT_LIGHT, "fill": pygame.Color(35,140,81)},
+15: {"font": TEXT_LIGHT, "fill": pygame.Color(113,180,213)},
+16: {"font": TEXT_LIGHT, "fill": pygame.Color(25,130,205)}
+
+}
+BORDER_WIDTH = 10
+TILE_SIZE = 100
+NUMBER_OF_ROWS = NUMBER_OF_COLUMNS = 4
+SCREEN_WIDTH = SCREEN_HEIGHT = ((NUMBER_OF_ROWS + 1)*BORDER_WIDTH) + (NUMBER_OF_ROWS*TILE_SIZE)
+FONT_SIZE = 24
+
+class Tile(pygame.sprite.Sprite):
+    def __init__(self, row, column, value=None):
+        super(Tile, self). __init__()
+        self.font = pygame.font.Font(pygame.font.get_default_font(), FONT_SIZE)
+        self.x_pos = BORDER_WIDTH + (row * (BORDER_WIDTH + TILE_SIZE))
+        self.y_pos = BORDER_WIDTH + (column * (BORDER_WIDTH + TILE_SIZE))
+        self.surface = pygame.Surface((TILE_SIZE, TILE_SIZE))
+        self.value = value
+        self.update(value)
+    def update(self, value):
+        self.change_fill(value)
+        self.change_text(value)
+        self.value = value
+    def change_fill(self, value):
+    def change_text(self, value):
+        if value:
+            
+
 
 
