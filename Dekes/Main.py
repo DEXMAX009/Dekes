@@ -1192,59 +1192,170 @@ if i % 1000 == 0:
 # if __name__ == "__main__":
 #     main()
 
-import pygame
-import random
-from py2048_classes import Board
-from pygame.locals import(K_UP, K_DOWN, K_LEFT, K_RIGHT, K_ESCAPE, KEYDOWN, QUIT)
+# import pygame
+# import random
+# from py2048_classes import Board
+# from pygame.locals import(K_UP, K_DOWN, K_LEFT, K_RIGHT, K_ESCAPE, KEYDOWN, QUIT)
+#
+# TEXT_DARK = pygame.Color(119,118,100)
+# TEXT_LIGHT = pygame.Color(255, 255, 255)
+# BACKGROUND = pygame.Color(188, 173, 159)
+# EMPTY = pygame.Color(286, 192, 178)
+# TITLE_MAX = pygame.Color(18,91, 146)
+# CELL_STYLES = {
+# 0: {"font": TEXT_DARK, "fill": EMPTY},
+# 1: {"font": TEXT_DARK, "fill": pygame.Color(239,229,218)},
+# 2: {"font": TEXT_DARK, "fill": pygame.Color(238,225,199)},
+# 3: {"font": TEXT_DARK, "fill": pygame.Color(242,177,121)},
+# 4: {"font": TEXT_LIGHT, "fill": pygame.Color(245,149,99)},
+# 5: {"font": TEXT_LIGHT, "fill": pygame.Color(247,127,96)},
+# 6: {"font": TEXT_LIGHT, "fill": pygame.Color(246,94,59)},
+# 7: {"font": TEXT_LIGHT, "fill": pygame.Color(241,219,147)},
+# 8: {"font": TEXT_LIGHT, "fill": pygame.Color(237,204,97)},
+# 9: {"font": TEXT_LIGHT, "fill": pygame.Color(235,193,57)},
+# 10: {"font": TEXT_LIGHT, "fill": pygame.Color(231,181,23)},
+# 11: {"font": TEXT_DARK, "fill": pygame.Color(192,154,16)},
+# 12: {"font": TEXT_LIGHT, "fill": pygame.Color(94,218,146)},
+# 13: {"font": TEXT_LIGHT, "fill": pygame.Color(37,187,100)},
+# 14: {"font": TEXT_LIGHT, "fill": pygame.Color(35,140,81)},
+# 15: {"font": TEXT_LIGHT, "fill": pygame.Color(113,180,213)},
+# 16: {"font": TEXT_LIGHT, "fill": pygame.Color(25,130,205)}
+#
+# }
+# BORDER_WIDTH = 10
+# TILE_SIZE = 100
+# NUMBER_OF_ROWS = NUMBER_OF_COLUMNS = 4
+# SCREEN_WIDTH = SCREEN_HEIGHT = ((NUMBER_OF_ROWS + 1)*BORDER_WIDTH) + (NUMBER_OF_ROWS*TILE_SIZE)
+# FONT_SIZE = 24
+#
+# class Tile(pygame.sprite.Sprite):
+#     def __init__(self, row, column, value=None):
+#         super(Tile, self). __init__()
+#         self.font = pygame.font.Font(pygame.font.get_default_font(), FONT_SIZE)
+#         self.x_pos = BORDER_WIDTH + (row * (BORDER_WIDTH + TILE_SIZE))
+#         self.y_pos = BORDER_WIDTH + (column * (BORDER_WIDTH + TILE_SIZE))
+#         self.surface = pygame.Surface((TILE_SIZE, TILE_SIZE))
+#         self.value = value
+#         self.update(value)
+#     def update(self, value):
+#         self.change_fill(value)
+#         self.change_text(value)
+#         self.value = value
+#     def change_fill(self, value):
+#     def change_text(self, value):
+#         if value:
+#Задание 1
+# import random
+#
+#
+# def linear_search():
+#     # Создаем список из 10 случайных чисел
+#     numbers = [random.randint(1, 100) for _ in range(10)]
+#     print(f"Список чисел: {numbers}")
+#
+#     try:
+#         # Получаем число от пользователя
+#         user_input = input("Введите число для поиска: ")
+#         target = int(user_input)
+#
+#         # Выполняем линейный поиск
+#         found = False
+#         position = -1
+#
+#         for i in range(len(numbers)):
+#             if numbers[i] == target:
+#                 found = True
+#                 position = i
+#                 break
+#
+#         # Выводим результат
+#         if found:
+#             print(f"Число {target} найдено на позиции {position}")
+#         else:
+#             print(f"Число {target} не найдено в списке")
+#
+#     except ValueError:
+#         print("Ошибка: введите целое число")
+#
+#
+# # Запуск программы
+# linear_search()
+#Задание 2
+# import random
+#
+#
+# def binary_search():
+#     # Создаем отсортированный список из 10 случайных чисел
+#     numbers = sorted([random.randint(1, 100) for _ in range(10)])
+#     print(f"Отсортированный список: {numbers}")
+#
+#     try:
+#         # Получаем число от пользователя
+#         user_input = input("Введите число для поиска: ")
+#
+#         # Проверяем тип аргумента (дополнительная проверка по заданию)
+#         if not isinstance(user_input, str):
+#             print("Ошибка: аргумент должен быть строкой")
+#             return
+#
+#         target = int(user_input)
+#
+#         # Выполняем бинарный поиск
+#         left = 0
+#         right = len(numbers) - 1
+#         found = False
+#         position = -1
+#
+#         while left <= right:
+#             mid = (left + right) // 2
+#
+#             if numbers[mid] == target:
+#                 found = True
+#                 position = mid
+#                 break
+#             elif numbers[mid] < target:
+#                 left = mid + 1
+#             else:
+#                 right = mid - 1
+#
+#         # Выводим результат
+#         if found:
+#             print(f"Число {target} найдено на позиции {position}")
+#         else:
+#             print(f"Число {target} не найдено в списке")
+#
+#     except ValueError:
+#         print("Ошибка: введите целое число")
+#
+#
+# # Запуск программы
+# binary_search()
+#Задание 3
+class Soda:
+    """
+    Класс для определения типа газированной воды
+    """
 
-TEXT_DARK = pygame.Color(119,118,100)
-TEXT_LIGHT = pygame.Color(255, 255, 255)
-BACKGROUND = pygame.Color(188, 173, 159)
-EMPTY = pygame.Color(286, 192, 178)
-TITLE_MAX = pygame.Color(18,91, 146)
-CELL_STYLES = {
-0: {"font": TEXT_DARK, "fill": EMPTY},
-1: {"font": TEXT_DARK, "fill": pygame.Color(239,229,218)},
-2: {"font": TEXT_DARK, "fill": pygame.Color(238,225,199)},
-3: {"font": TEXT_DARK, "fill": pygame.Color(242,177,121)},
-4: {"font": TEXT_LIGHT, "fill": pygame.Color(245,149,99)},
-5: {"font": TEXT_LIGHT, "fill": pygame.Color(247,127,96)},
-6: {"font": TEXT_LIGHT, "fill": pygame.Color(246,94,59)},
-7: {"font": TEXT_LIGHT, "fill": pygame.Color(241,219,147)},
-8: {"font": TEXT_LIGHT, "fill": pygame.Color(237,204,97)},
-9: {"font": TEXT_LIGHT, "fill": pygame.Color(235,193,57)},
-10: {"font": TEXT_LIGHT, "fill": pygame.Color(231,181,23)},
-11: {"font": TEXT_DARK, "fill": pygame.Color(192,154,16)},
-12: {"font": TEXT_LIGHT, "fill": pygame.Color(94,218,146)},
-13: {"font": TEXT_LIGHT, "fill": pygame.Color(37,187,100)},
-14: {"font": TEXT_LIGHT, "fill": pygame.Color(35,140,81)},
-15: {"font": TEXT_LIGHT, "fill": pygame.Color(113,180,213)},
-16: {"font": TEXT_LIGHT, "fill": pygame.Color(25,130,205)}
+    def __init__(self, additive=None):
+        """
+        Инициализация объекта газированной воды
 
-}
-BORDER_WIDTH = 10
-TILE_SIZE = 100
-NUMBER_OF_ROWS = NUMBER_OF_COLUMNS = 4
-SCREEN_WIDTH = SCREEN_HEIGHT = ((NUMBER_OF_ROWS + 1)*BORDER_WIDTH) + (NUMBER_OF_ROWS*TILE_SIZE)
-FONT_SIZE = 24
+        Args:
+            additive (str, optional): Добавка к лимонаду. По умолчанию None.
+        """
+        self.additive = additive
 
-class Tile(pygame.sprite.Sprite):
-    def __init__(self, row, column, value=None):
-        super(Tile, self). __init__()
-        self.font = pygame.font.Font(pygame.font.get_default_font(), FONT_SIZE)
-        self.x_pos = BORDER_WIDTH + (row * (BORDER_WIDTH + TILE_SIZE))
-        self.y_pos = BORDER_WIDTH + (column * (BORDER_WIDTH + TILE_SIZE))
-        self.surface = pygame.Surface((TILE_SIZE, TILE_SIZE))
-        self.value = value
-        self.update(value)
-    def update(self, value):
-        self.change_fill(value)
-        self.change_text(value)
-        self.value = value
-    def change_fill(self, value):
-    def change_text(self, value):
-        if value:
-            
+    def show_my_drink(self):
+        """
+        Выводит информацию о напитке
+        - 'Газировка и ДОБАВКА' при наличии добавки
+        - 'Обычная газировка' без добавки
+        """
+        if self.additive:
+            print(f"Газировка и {self.additive}")
+        else:
+            print("Обычная газировка")
 
 
+Soda("Клубника").show_my_drink()
 
