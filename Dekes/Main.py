@@ -1244,9 +1244,9 @@ if i % 1000 == 0:
 #     def change_fill(self, value):
 #     def change_text(self, value):
 #         if value:
-<<<<<<< HEAD
+
             
-=======
+
 #Задание 1
 # import random
 #
@@ -1358,7 +1358,7 @@ class Soda:
             print(f"Газировка и {self.additive}")
         else:
             print("Обычная газировка")
->>>>>>> 44888ad2c3d24f7409bfa7f9b8f760dcafaca49e
+
 
 
 Soda("Клубника").show_my_drink()
