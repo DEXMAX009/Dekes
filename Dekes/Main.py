@@ -1244,7 +1244,122 @@ if i % 1000 == 0:
 #     def change_fill(self, value):
 #     def change_text(self, value):
 #         if value:
+<<<<<<< HEAD
             
+=======
+#Задание 1
+# import random
+#
+#
+# def linear_search():
+#     # Создаем список из 10 случайных чисел
+#     numbers = [random.randint(1, 100) for _ in range(10)]
+#     print(f"Список чисел: {numbers}")
+#
+#     try:
+#         # Получаем число от пользователя
+#         user_input = input("Введите число для поиска: ")
+#         target = int(user_input)
+#
+#         # Выполняем линейный поиск
+#         found = False
+#         position = -1
+#
+#         for i in range(len(numbers)):
+#             if numbers[i] == target:
+#                 found = True
+#                 position = i
+#                 break
+#
+#         # Выводим результат
+#         if found:
+#             print(f"Число {target} найдено на позиции {position}")
+#         else:
+#             print(f"Число {target} не найдено в списке")
+#
+#     except ValueError:
+#         print("Ошибка: введите целое число")
+#
+#
+# # Запуск программы
+# linear_search()
+#Задание 2
+# import random
+#
+#
+# def binary_search():
+#     # Создаем отсортированный список из 10 случайных чисел
+#     numbers = sorted([random.randint(1, 100) for _ in range(10)])
+#     print(f"Отсортированный список: {numbers}")
+#
+#     try:
+#         # Получаем число от пользователя
+#         user_input = input("Введите число для поиска: ")
+#
+#         # Проверяем тип аргумента (дополнительная проверка по заданию)
+#         if not isinstance(user_input, str):
+#             print("Ошибка: аргумент должен быть строкой")
+#             return
+#
+#         target = int(user_input)
+#
+#         # Выполняем бинарный поиск
+#         left = 0
+#         right = len(numbers) - 1
+#         found = False
+#         position = -1
+#
+#         while left <= right:
+#             mid = (left + right) // 2
+#
+#             if numbers[mid] == target:
+#                 found = True
+#                 position = mid
+#                 break
+#             elif numbers[mid] < target:
+#                 left = mid + 1
+#             else:
+#                 right = mid - 1
+#
+#         # Выводим результат
+#         if found:
+#             print(f"Число {target} найдено на позиции {position}")
+#         else:
+#             print(f"Число {target} не найдено в списке")
+#
+#     except ValueError:
+#         print("Ошибка: введите целое число")
+#
+#
+# # Запуск программы
+# binary_search()
+#Задание 3
+class Soda:
+    """
+    Класс для определения типа газированной воды
+    """
+
+    def __init__(self, additive=None):
+        """
+        Инициализация объекта газированной воды
+
+        Args:
+            additive (str, optional): Добавка к лимонаду. По умолчанию None.
+        """
+        self.additive = additive
+
+    def show_my_drink(self):
+        """
+        Выводит информацию о напитке
+        - 'Газировка и ДОБАВКА' при наличии добавки
+        - 'Обычная газировка' без добавки
+        """
+        if self.additive:
+            print(f"Газировка и {self.additive}")
+        else:
+            print("Обычная газировка")
+>>>>>>> 44888ad2c3d24f7409bfa7f9b8f760dcafaca49e
 
 
+Soda("Клубника").show_my_drink()
 
